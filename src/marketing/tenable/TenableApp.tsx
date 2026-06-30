@@ -33,88 +33,15 @@ type Proof = {
   title: string;
   desc: string;
   href: string;
-  open: string;
-  visual: React.ReactNode;
 };
 
-// Connector framework: a source panel feeding the platform through a pulsing wire.
-const MdpVisual = (
-  <svg className="tn-vis" viewBox="0 0 220 120" aria-hidden="true" focusable="false">
-    <rect className="tn-vis__panel" x="14" y="26" width="78" height="68" rx="8" />
-    <rect className="tn-vis__line" x="24" y="38" width="44" height="6" rx="3" />
-    <rect className="tn-vis__line tn-vis__line--soft" x="24" y="52" width="58" height="4" rx="2" />
-    <rect className="tn-vis__line tn-vis__line--soft" x="24" y="62" width="40" height="4" rx="2" />
-    <rect className="tn-vis__line tn-vis__line--soft" x="24" y="76" width="50" height="4" rx="2" />
-    <line className="tn-vis__wire" x1="94" y1="60" x2="128" y2="60" />
-    <line className="tn-vis__flow" x1="94" y1="60" x2="128" y2="60" />
-    <circle className="tn-vis__pulse" r="3.5" />
-    <rect className="tn-vis__art" x="130" y="22" width="76" height="76" rx="8" />
-    <rect className="tn-vis__art-bar" x="140" y="34" width="46" height="8" rx="3" />
-    <rect className="tn-vis__line tn-vis__line--soft" x="140" y="50" width="54" height="4" rx="2" />
-    <rect className="tn-vis__chip" x="140" y="74" width="22" height="14" rx="4" />
-    <rect className="tn-vis__chip tn-vis__chip--b" x="168" y="74" width="22" height="14" rx="4" />
-  </svg>
-);
-
-// Ingestion: three language workers feeding one central pipeline node.
-const OrchestrateVisual = (
-  <svg className="tn-vis" viewBox="0 0 220 120" aria-hidden="true" focusable="false">
-    <line className="tn-vis__edge" x1="40" y1="26" x2="110" y2="60" />
-    <line className="tn-vis__edge" x1="40" y1="60" x2="110" y2="60" />
-    <line className="tn-vis__edge" x1="40" y1="94" x2="110" y2="60" />
-    <line className="tn-vis__edge tn-vis__edge--out" x1="110" y1="60" x2="186" y2="60" />
-    <g className="tn-vis__worker"><rect x="14" y="18" width="36" height="16" rx="5" /><text x="32" y="30">Go</text></g>
-    <g className="tn-vis__worker"><rect x="14" y="52" width="36" height="16" rx="5" /><text x="32" y="64">Py</text></g>
-    <g className="tn-vis__worker"><rect x="14" y="86" width="36" height="16" rx="5" /><text x="32" y="98">TS</text></g>
-    <circle className="tn-vis__hub" cx="110" cy="60" r="16" />
-    <circle className="tn-vis__hub-ring" cx="110" cy="60" r="16" />
-    <rect className="tn-vis__sink" x="186" y="50" width="20" height="20" rx="5" />
-  </svg>
-);
-
-// Full-stack app: streaming rows with a now-playing accent bar.
-const AppVisual = (
-  <svg className="tn-vis" viewBox="0 0 220 120" aria-hidden="true" focusable="false">
-    <rect className="tn-vis__panel" x="14" y="16" width="192" height="88" rx="9" />
-    <circle className="tn-vis__disc" cx="40" cy="40" r="13" />
-    <rect className="tn-vis__line" x="62" y="32" width="80" height="6" rx="3" />
-    <rect className="tn-vis__line tn-vis__line--soft" x="62" y="44" width="54" height="4" rx="2" />
-    <rect className="tn-vis__row" x="26" y="68" width="168" height="9" rx="4.5" />
-    <rect className="tn-vis__row tn-vis__row--play" x="26" y="84" width="110" height="9" rx="4.5" />
-    <g className="tn-vis__eq" aria-hidden="true">
-      <rect x="150" y="82" width="4" height="12" rx="2" />
-      <rect x="158" y="78" width="4" height="16" rx="2" />
-      <rect x="166" y="84" width="4" height="10" rx="2" />
-      <rect x="174" y="80" width="4" height="14" rx="2" />
-    </g>
-  </svg>
-);
-
 const PROOF: Proof[] = [
-  {
-    tag: 'OPEN SOURCE · MCP SERVER + PLUGINS',
-    title: 'MDP',
-    desc: 'A Markdown to document compiler, published on npm, with an MCP server and Claude Code and Codex plugins so other tools and agents extend it. A developer-facing framework: a clean surface someone else plugs into and builds on.',
-    href: 'https://barmoshe.github.io/mdp/',
-    open: 'Open MDP',
-    visual: MdpVisual,
-  },
-  {
-    tag: 'INGESTION · CODE EXCHANGE',
-    title: 'Cross-language orchestration',
-    desc: 'One Temporal workflow coordinating Go, Python, and TypeScript workers as a single durable pipeline. Featured on Temporal’s Code Exchange. The distributed-systems and data-flow muscle behind ingesting from many sources at once.',
-    href: 'https://temporal.io/code-exchange/cross-language-data-processing-service-with-temporal',
-    open: 'See the writeup',
-    visual: OrchestrateVisual,
-  },
-  {
-    tag: 'FULL STACK · API → UI',
-    title: 'Israelify',
-    desc: 'A streaming app with a Node API, auth, middleware, and a custom logger behind a React front end. A REST API designed and consumed to power a rich, interactive UI, end to end.',
-    href: 'https://github.com/barmoshe/Israelify-backend',
-    open: 'View the code',
-    visual: AppVisual,
-  },
+  { tag: 'Open source · AI tooling', title: 'MDP', desc: 'An open-source Markdown compiler: one source becomes design-locked decks, pages, and docs. Built for AI agents to write into. Zero-dependency Node engine on npm, with an MCP server and Claude Code and Codex plugins.', href: 'https://barmoshe.github.io/mdp/' },
+  { tag: 'AI agents · Durable workflows', title: 'Temporal plugin', desc: 'A Temporal.io orchestration plugin for Claude Code: durable, retryable workflows for agents. A plugin other developers install.', href: 'https://github.com/Base67-AI/temporal-plugin' },
+  { tag: 'Backend · Durable workflows', title: 'Temporal Data Service', desc: 'A cross-language data-processing service on Temporal: Go, Python, and TypeScript workers under one durable workflow. Featured on Temporal Code Exchange.', href: 'https://temporal.io/code-exchange/cross-language-data-processing-service-with-temporal' },
+  { tag: 'AI · Pipeline', title: 'MIDI GPT REST API', desc: 'A REST API that generates MIDI: a multi-step pipeline on Temporal across Go, Python, and TypeScript workers, calling OpenAI with retries and validation.', href: 'https://github.com/barmoshe/AI_MIDI_API' },
+  { tag: 'AI agents · Systems', title: 'Creative Harness', desc: 'An open AI-agent harness for Claude Code: skills, hooks, and tooling so one builder ships like a small team.', href: 'https://github.com/barmoshe/claude-creative-stack' },
+  { tag: 'Full-stack', title: 'Israelify', desc: 'A full-stack streaming app: a React front end over a Node and Mongo API I built, with auth, middleware, and a custom logger.', href: 'https://github.com/barmoshe/Israelify-backend' },
 ];
 
 type Fit = { k: string; lead: string; body: string };
@@ -138,7 +65,7 @@ const FIT: Fit[] = [
   {
     k: 'Production-first, browser to data layer',
     lead: 'Owned design through deploy, then run it.',
-    body: 'I own features from design to deploy with minimal supervision, then keep them alive: EKS, Terraform, and CI/CD from the Wix DevOps track, applied daily as the primary engineer at an early-stage startup. I debug across the whole stack, from devtools to the logs.',
+    body: 'I own features from design to deploy with minimal supervision, then keep them alive: EKS, Terraform, and CI/CD from the Wix DevOps track, applied daily as the primary full-stack and DevOps engineer at Joomsy, an early-stage startup (team of five). I debug across the whole stack, from devtools to the logs.',
   },
 ];
 
@@ -319,12 +246,11 @@ export default function TenableApp() {
                   rel="noopener noreferrer"
                   data-reveal
                 >
-                  <div className="tn-pcard__screen">{p.visual}</div>
                   <div className="tn-pcard__body">
                     <span className="tn-pcard__tag">{p.tag}</span>
                     <h3 className="tn-pcard__title">{p.title}</h3>
                     <p className="tn-pcard__desc">{p.desc}</p>
-                    <span className="tn-pcard__link" aria-hidden="true">{p.open} →</span>
+                    <span className="tn-pcard__link" aria-hidden="true">View ↗</span>
                   </div>
                 </a>
               ))}
