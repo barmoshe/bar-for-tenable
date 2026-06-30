@@ -30,9 +30,9 @@ const mono = JetBrains_Mono({
 // in Tenable's own visual language (Tenable Navy #041E42, the turquoise accent,
 // the diamond mark, mono connector labels). A private, shareable link sent to
 // the Tenable team, so robots noindex.
-const ogTitle = "Bar Moshe × Tenable — Integrations Frameworks";
+const ogTitle = "Bar Moshe × Tenable · Integrations Frameworks";
 const ogDescription =
-  "Bar Moshe, full stack engineer. I build the integration frameworks and developer tooling that turn scattered data into a single, performant exposure view. Here is that work, in your language.";
+  "Bar Moshe, full-stack engineer. Integration frameworks, data-ingestion pipelines, and the frontends on top, across React/TypeScript, Go, Python, and Node. A few things I have shipped, mapped to this role.";
 
 // noindex (private, shareable link) but a rich share card still renders for
 // direct shares (email / DM / LinkedIn). The og:image / twitter:image tags are

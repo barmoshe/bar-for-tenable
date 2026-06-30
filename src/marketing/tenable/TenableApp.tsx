@@ -128,7 +128,7 @@ const FIT: Fit[] = [
   {
     k: 'Frameworks others extend',
     lead: 'MCP server, editor plugins, a plan-mode hook.',
-    body: 'MDP is not just an app, it is a surface other tools plug into: an MCP server plus Claude Code and Codex plugins. That is the role’s core, building the framework that lets internal teams, partners, and the community customize and extend the platform.',
+    body: 'MDP ships with an MCP server plus Claude Code and Codex plugins, so other tools and agents extend it. That is the core of this role: building the framework that internal teams, partners, and the community plug into.',
   },
   {
     k: 'Data ingestion and distributed systems',
@@ -244,14 +244,14 @@ export default function TenableApp() {
                 INTEGRATIONS FRAMEWORKS · TENABLE ONE · TEL AVIV
               </p>
               <h1 className="tn-title" data-rise>
-                I build the integration frameworks behind{' '}
-                <span className="tn-hl">one clear exposure view</span>
+                Full-stack engineer.{' '}
+                <span className="tn-hl">Integration frameworks and the UI on top.</span>
               </h1>
               <p className="tn-lede" data-rise>
-                From a connector, through data ingestion, to a fast, intuitive frontend.
-                Frameworks that let internal teams, partners, and the community extend the
-                platform, and the full-stack craft to bridge complex backends with a UI
-                people actually want to use.
+                I write React and TypeScript over Node, Go, and Python. I have built
+                data-ingestion pipelines, developer-facing frameworks (an MCP server and
+                editor plugins), and production systems I own from design through deploy.
+                Below: a few I have shipped, and where they line up with this role.
               </p>
               <div className="tn-hero__cta" data-rise>
                 <a className="tn-btn tn-btn--primary" href={EMAIL}>
@@ -288,12 +288,11 @@ export default function TenableApp() {
           <div className="tn-wrap">
             <header className="tn-section__head" data-reveal>
               <p className="tn-kicker">From integration to exposure</p>
-              <h2 className="tn-h2">Scattered sources should resolve into a single, trustworthy view.</h2>
+              <h2 className="tn-h2">A working model of the kind of surface I build.</h2>
               <p className="tn-sub">
-                The kind of surface I build: a third-party source connects through the
-                framework, assets and findings ingest, the data is normalized and
-                deduplicated, and one exposure view surfaces in the browser. Built from
-                scratch for this page in your brand.
+                A source connects through the framework, assets and findings ingest, the
+                data is normalized and deduplicated, and an exposure view renders in the
+                browser. Built from scratch for this page.
               </p>
             </header>
             <div data-reveal>
@@ -306,9 +305,9 @@ export default function TenableApp() {
         <section id="work" className="tn-section">
           <div className="tn-wrap">
             <header className="tn-section__head" data-reveal>
-              <p className="tn-kicker">Proof, not claims</p>
+              <p className="tn-kicker">Selected work</p>
               <h2 className="tn-h2">A few things I have shipped.</h2>
-              <p className="tn-sub">Each one is live. Open it and check for yourself.</p>
+              <p className="tn-sub">Each one is live. Open it and check.</p>
             </header>
             <div className="tn-proof__grid">
               {PROOF.map((p) => (
@@ -344,8 +343,8 @@ export default function TenableApp() {
         <section id="fit" className="tn-section tn-section--soft">
           <div className="tn-wrap">
             <header className="tn-section__head" data-reveal>
-              <p className="tn-kicker">Why me, for this role</p>
-              <h2 className="tn-h2">Your posting, mapped to work I have already done.</h2>
+              <p className="tn-kicker">Experience, mapped to the role</p>
+              <h2 className="tn-h2">What the posting asks for, and where I have done it.</h2>
             </header>
             <div className="tn-fit__grid">
               {FIT.map((f, i) => (
@@ -364,10 +363,10 @@ export default function TenableApp() {
         <section className="tn-cta">
           <div className="tn-cta__inner" data-reveal>
             <TenableMark className="tn-cta__mark" />
-            <h2 className="tn-cta__title">Let’s close the gap together.</h2>
+            <h2 className="tn-cta__title">Let’s talk.</h2>
             <p className="tn-cta__sub">
-              If the work above looks like the kind of engineer you want on the
-              Integrations Frameworks team, I am one message away.
+              If this looks like the kind of engineer you want on the Integrations
+              Frameworks team, here is how to reach me.
             </p>
             <div className="tn-cta__links">
               <a className="tn-btn tn-btn--oninvert" href={EMAIL}>Email me</a>
