@@ -8,7 +8,7 @@ import { ImageResponse } from 'next/og';
 // with the route and wires the og:image / twitter:image tags automatically.
 
 export const alt =
-  'Bar Moshe for Tenable, Full Stack Engineer, Integrations Frameworks. Integration frameworks, data ingestion, and the UI on top.';
+  'Bar Moshe, applying for Full Stack Engineer, Integrations Frameworks at Tenable. Shipped work, mapped to the role.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -85,10 +85,10 @@ export default function Image() {
                 maxWidth: '1010px',
               }}
             >
-              Full-stack engineer. Integration frameworks and the UI on top.
+              Bar Moshe, applying for Integrations Frameworks.
             </div>
             <div style={{ display: 'flex', fontSize: 31, color: '#9fb3c8', marginTop: '22px', maxWidth: '940px', lineHeight: 1.35 }}>
-              React and TypeScript over Node, Go, and Python. A few things I have shipped, mapped to this role.
+              Full stack engineer. React and TypeScript over Node, Go, and Python. Shipped work, mapped to this role.
             </div>
           </div>
 

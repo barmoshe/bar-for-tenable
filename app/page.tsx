@@ -32,7 +32,7 @@ const mono = JetBrains_Mono({
 // the Tenable team, so robots noindex.
 const ogTitle = "Bar Moshe × Tenable · Integrations Frameworks";
 const ogDescription =
-  "Bar Moshe, full-stack engineer. Integration frameworks, data-ingestion pipelines, and the frontends on top, across React/TypeScript, Go, Python, and Node. A few things I have shipped, mapped to this role.";
+  "Bar Moshe, full stack engineer applying for the Integrations Frameworks role at Tenable One. Shipped work across React/TypeScript, Go, Python, and Node, mapped to the role.";
 
 // noindex (private, shareable link) but a rich share card still renders for
 // direct shares (email / DM / LinkedIn). The og:image / twitter:image tags are

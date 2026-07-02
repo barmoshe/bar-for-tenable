@@ -590,6 +590,11 @@
 .tn-pcard__title { margin: 2px 0 0; font-size: 1.16rem; font-weight: 700; letter-spacing: -0.02em; color: var(--tn-ink); }
 .tn-pcard__desc { margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--tn-body); }
 .tn-pcard__link { margin-block-start: 4px; font-size: 0.9rem; font-weight: 700; color: var(--tn-lime); }
+/* Credential-only card (employer work, no public link): same tile, no link
+   affordance, a lime edge so it reads as deliberate rather than broken. */
+.tn-pcard--static { cursor: default; border-color: rgba(214, 248, 76, 0.28); }
+.tn-pcard--static:hover { transform: none; box-shadow: none; border-color: rgba(214, 248, 76, 0.28); }
+.tn-pcard__note { margin-block-start: 4px; font-family: var(--tn-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tn-muted); }
 .tn-proof__more { margin: 26px 0 0; font-size: 0.95rem; color: var(--tn-muted); }
 .tn-root .tn-proof__more a { color: var(--tn-lime); font-weight: 700; text-decoration: none; }
 .tn-root .tn-proof__more a:hover { text-decoration: underline; }
@@ -663,26 +668,44 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.tn-console__name {
+  min-inline-size: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* Numbered fit cards: keep the title clear of the absolute corner number. */
+.tn-fcard__k { padding-inline-end: 44px; }
 
 @media (max-width: 760px) {
   .tn-hero__visual { inline-size: clamp(180px, 56vw, 320px); inset-block-start: clamp(36px, 12vw, 80px); opacity: 0.5; }
   .tn-asset__src { max-inline-size: 36vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tn-section__head { margin-block-end: 32px; }
 }
 
 .tn-nav__short { display: none; }
-@media (max-width: 400px) {
-  .tn-nav__full { display: none; }
-  .tn-nav__short { display: inline; }
-}
 
 @media (max-width: 560px) {
   .tn-nav__inner { gap: 10px; padding-inline: 16px; }
   .tn-nav__tag { display: none; }
   .tn-wordmark { font-size: 1.16rem; }
   .tn-nav__cta { gap: 8px; }
+  .tn-hero { min-block-size: 86svh; }
   .tn-hero__cta { width: 100%; }
   .tn-hero__cta .tn-btn { flex: 1 1 100%; }
+  .tn-hero__scroll { display: none; }
+  .tn-cta__links { width: 100%; }
   .tn-cta__links .tn-btn { flex: 1 1 100%; }
+  .tn-stream, .tn-pipe { padding: 14px; }
+  .tn-fcard { padding: 22px 18px 20px; }
+  .tn-footer__bottom-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 400px) {
+  .tn-nav__full { display: none; }
+  .tn-nav__short { display: inline; }
+  .tn-wordmark { font-size: 1.05rem; }
+  .tn-btn--sm { padding: 8px 14px; font-size: 0.86rem; }
 }
 
 /* ── Reduced motion ────────────────────────────────────────── */

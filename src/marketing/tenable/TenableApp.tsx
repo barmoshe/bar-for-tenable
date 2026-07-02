@@ -32,16 +32,20 @@ type Proof = {
   tag: string;
   title: string;
   desc: string;
-  href: string;
+  /** Absent = credential-only card (employer IP, no public link). */
+  href?: string;
 };
 
 const PROOF: Proof[] = [
-  { tag: 'Open source · AI tooling', title: 'MDP', desc: 'An open-source Markdown compiler: one source becomes design-locked decks, pages, and docs. Built for AI agents to write into. Zero-dependency Node engine on npm, with an MCP server and Claude Code and Codex plugins.', href: 'https://barmoshe.github.io/mdp/' },
-  { tag: 'AI agents · Durable workflows', title: 'Temporal plugin', desc: 'A Temporal.io orchestration plugin for Claude Code: durable, retryable workflows for agents. A plugin other developers install.', href: 'https://github.com/Base67-AI/temporal-plugin' },
-  { tag: 'Backend · Durable workflows', title: 'Temporal Data Service', desc: 'A cross-language data-processing service on Temporal: Go, Python, and TypeScript workers under one durable workflow. Featured on Temporal Code Exchange.', href: 'https://temporal.io/code-exchange/cross-language-data-processing-service-with-temporal' },
-  { tag: 'AI · Pipeline', title: 'MIDI GPT REST API', desc: 'A REST API that generates MIDI: a multi-step pipeline on Temporal across Go, Python, and TypeScript workers, calling OpenAI with retries and validation.', href: 'https://github.com/barmoshe/AI_MIDI_API' },
-  { tag: 'AI agents · Systems', title: 'Creative Harness', desc: 'An open AI-agent harness for Claude Code: skills, hooks, and tooling so one builder ships like a small team.', href: 'https://github.com/barmoshe/claude-creative-stack' },
-  { tag: 'Full-stack', title: 'Israelify', desc: 'A full-stack streaming app: a React front end over a Node and Mongo API I built, with auth, middleware, and a custom logger.', href: 'https://github.com/barmoshe/Israelify-backend' },
+  { tag: 'Open source · AI tooling', title: 'MDP', desc: 'Open-source Markdown compiler on npm: one source becomes decks, pages, and docs. Ships with an MCP server and Claude Code and Codex plugins.', href: 'https://barmoshe.github.io/mdp/' },
+  { tag: 'Current role · Full stack + DevOps', title: 'Joomsy', desc: 'Primary full-stack and DevOps engineer at Joomsy, an early-stage startup. I ship features from design to deploy and run them in production on EKS with Terraform and CI/CD.' },
+  { tag: 'Backend · Durable workflows', title: 'Temporal Data Service', desc: 'Cross-language data processing on Temporal: Go, Python, and TypeScript workers in one durable workflow. Featured on Temporal Code Exchange.', href: 'https://temporal.io/code-exchange/cross-language-data-processing-service-with-temporal' },
+  { tag: 'AI agents · Durable workflows', title: 'Temporal plugin', desc: 'A Temporal.io plugin for Claude Code: durable, retryable workflows for AI agents. Other developers install it.', href: 'https://github.com/Base67-AI/temporal-plugin' },
+  { tag: 'AI · Pipeline', title: 'MIDI GPT REST API', desc: 'A REST API that generates MIDI: a multi-step Temporal pipeline across three languages, calling OpenAI with retries and validation.', href: 'https://github.com/barmoshe/AI_MIDI_API' },
+  { tag: 'Open source · AI video', title: 'Catalogue Orchestrator', desc: 'A local-first AI video orchestrator: RAG over a clip catalogue plans an edit, and a deterministic ffmpeg compiler renders the cut.', href: 'https://barmoshe.github.io/catalogue-orchestrator/' },
+  { tag: 'AI agents · Systems', title: 'Creative Harness', desc: 'An open AI-agent harness for Claude Code: skills, hooks, and tooling for shipping production work fast.', href: 'https://github.com/barmoshe/claude-creative-stack' },
+  { tag: 'Open source · Toolkit', title: 'entailer', desc: 'An open-source logic-validity toolkit: checks whether an argument actually follows. Public packages on npm.', href: 'https://github.com/barmoshe/entailer' },
+  { tag: 'Product · Web app', title: 'Apartment Hunter', desc: 'A real-estate decision tool: side-by-side comparison, Israeli purchase-tax brackets, a full mortgage calculator. Shipped solo.', href: 'https://apartment-hunter-one.vercel.app' },
 ];
 
 type Fit = { k: string; lead: string; body: string };
@@ -50,22 +54,22 @@ const FIT: Fit[] = [
   {
     k: 'Full stack across the seam',
     lead: 'React + TypeScript over Node, Go, and Python.',
-    body: 'I ship the whole feature: a data-driven React and TypeScript UI on top of services I also write. Israelify is a React front end over a Node API I built; the design of the API and the shape of the UI it powers were one job, not two.',
+    body: 'I ship the whole feature: a React and TypeScript UI on top of services I also write. At Joomsy I do this daily, from the API design to the UI it powers, as one job, not two.',
   },
   {
     k: 'Frameworks others extend',
     lead: 'MCP server, editor plugins, a plan-mode hook.',
-    body: 'MDP ships with an MCP server plus Claude Code and Codex plugins, so other tools and agents extend it. That is the core of this role: building the framework that internal teams, partners, and the community plug into.',
+    body: 'MDP ships with an MCP server plus Claude Code and Codex plugins, so other tools and agents extend it. That is this role: building the framework other teams plug into.',
   },
   {
     k: 'Data ingestion and distributed systems',
     lead: 'Durable pipelines, cloud-native, end to end.',
-    body: 'The Temporal project ingests work across Go, Python, and TypeScript workers behind one durable workflow. Reasoning about data flow and performance from source to store, on EKS and Kubernetes, is home ground for an integrations role.',
+    body: 'My Temporal service ingests work across Go, Python, and TypeScript workers behind one durable workflow. I reason about data flow and performance from source to store, on Kubernetes and EKS.',
   },
   {
     k: 'Production-first, browser to data layer',
     lead: 'Owned design through deploy, then run it.',
-    body: 'I own features from design to deploy with minimal supervision, then keep them alive: EKS, Terraform, and CI/CD from the Wix DevOps track, applied daily as the primary full-stack and DevOps engineer at Joomsy, an early-stage startup (team of five). I debug across the whole stack, from devtools to the logs.',
+    body: 'At Joomsy, an early-stage startup, I am the primary full-stack and DevOps engineer. I own features from design to deploy, run them on EKS with Terraform and CI/CD (Wix DevOps track), and debug from browser devtools to the logs.',
   },
 ];
 
@@ -151,8 +155,8 @@ export default function TenableApp() {
           <div className="tn-nav__cta">
             <a className="tn-btn tn-btn--ghost tn-btn--sm" href={CV} target="_blank" rel="noopener noreferrer">Download CV</a>
             <a className="tn-btn tn-btn--primary tn-btn--sm" href={EMAIL}>
-              <span className="tn-nav__full">Start a conversation</span>
-              <span className="tn-nav__short">Let’s talk</span>
+              <span className="tn-nav__full">Email me</span>
+              <span className="tn-nav__short">Email</span>
             </a>
           </div>
         </div>
@@ -171,18 +175,18 @@ export default function TenableApp() {
                 INTEGRATIONS FRAMEWORKS · TENABLE ONE · TEL AVIV
               </p>
               <h1 className="tn-title" data-rise>
-                Full-stack engineer.{' '}
-                <span className="tn-hl">Integration frameworks and the UI on top.</span>
+                Bar Moshe, applying for{' '}
+                <span className="tn-hl">Integrations Frameworks.</span>
               </h1>
               <p className="tn-lede" data-rise>
-                I write React and TypeScript over Node, Go, and Python. I have built
-                data-ingestion pipelines, developer-facing frameworks (an MCP server and
-                editor plugins), and production systems I own from design through deploy.
-                Below: a few I have shipped, and where they line up with this role.
+                Full stack engineer. React and TypeScript over Node, Go, and Python.
+                I have shipped data-ingestion pipelines, developer-facing frameworks,
+                and production systems I own from design to deploy. The work is below,
+                mapped to this role.
               </p>
               <div className="tn-hero__cta" data-rise>
                 <a className="tn-btn tn-btn--primary" href={EMAIL}>
-                  Start a conversation
+                  Email me
                   <span className="tn-btn__arrow" aria-hidden="true">→</span>
                 </a>
                 <a className="tn-btn tn-btn--ghost" href={CV} target="_blank" rel="noopener noreferrer">
@@ -190,7 +194,7 @@ export default function TenableApp() {
                 </a>
               </div>
               <p className="tn-hero__trust" data-rise>
-                <strong>Full stack engineer</strong> · React + TypeScript · Go / Python / Node · Tel Aviv, available to talk
+                <strong>Tel Aviv</strong> · React + TypeScript · Go / Python / Node · Available for interviews
               </p>
             </div>
           </div>
@@ -215,11 +219,10 @@ export default function TenableApp() {
           <div className="tn-wrap">
             <header className="tn-section__head" data-reveal>
               <p className="tn-kicker">From integration to exposure</p>
-              <h2 className="tn-h2">A working model of the kind of surface I build.</h2>
+              <h2 className="tn-h2">A working demo of the job itself.</h2>
               <p className="tn-sub">
-                A source connects through the framework, assets and findings ingest, the
-                data is normalized and deduplicated, and an exposure view renders in the
-                browser. Built from scratch for this page.
+                A source connects, assets ingest, the data is normalized and deduplicated,
+                and one exposure view renders. Built from scratch for this page.
               </p>
             </header>
             <div data-reveal>
@@ -233,27 +236,41 @@ export default function TenableApp() {
           <div className="tn-wrap">
             <header className="tn-section__head" data-reveal>
               <p className="tn-kicker">Selected work</p>
-              <h2 className="tn-h2">A few things I have shipped.</h2>
-              <p className="tn-sub">Each one is live. Open it and check.</p>
+              <h2 className="tn-h2">What I have shipped.</h2>
+              <p className="tn-sub">
+                Every card links to the live thing. Joomsy stays unlinked: that code
+                belongs to my employer.
+              </p>
             </header>
             <div className="tn-proof__grid">
-              {PROOF.map((p) => (
-                <a
-                  key={p.title}
-                  className="tn-pcard"
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-reveal
-                >
-                  <div className="tn-pcard__body">
-                    <span className="tn-pcard__tag">{p.tag}</span>
-                    <h3 className="tn-pcard__title">{p.title}</h3>
-                    <p className="tn-pcard__desc">{p.desc}</p>
-                    <span className="tn-pcard__link" aria-hidden="true">View ↗</span>
-                  </div>
-                </a>
-              ))}
+              {PROOF.map((p) =>
+                p.href ? (
+                  <a
+                    key={p.title}
+                    className="tn-pcard"
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-reveal
+                  >
+                    <div className="tn-pcard__body">
+                      <span className="tn-pcard__tag">{p.tag}</span>
+                      <h3 className="tn-pcard__title">{p.title}</h3>
+                      <p className="tn-pcard__desc">{p.desc}</p>
+                      <span className="tn-pcard__link" aria-hidden="true">View ↗</span>
+                    </div>
+                  </a>
+                ) : (
+                  <article key={p.title} className="tn-pcard tn-pcard--static" data-reveal>
+                    <div className="tn-pcard__body">
+                      <span className="tn-pcard__tag">{p.tag}</span>
+                      <h3 className="tn-pcard__title">{p.title}</h3>
+                      <p className="tn-pcard__desc">{p.desc}</p>
+                      <span className="tn-pcard__note">Private codebase</span>
+                    </div>
+                  </article>
+                ),
+              )}
             </div>
             <p className="tn-proof__more">
               More in{' '}
@@ -291,8 +308,7 @@ export default function TenableApp() {
             <TenableMark className="tn-cta__mark" />
             <h2 className="tn-cta__title">Let’s talk.</h2>
             <p className="tn-cta__sub">
-              If this looks like the kind of engineer you want on the Integrations
-              Frameworks team, here is how to reach me.
+              I would be glad to interview for this role. Here is how to reach me.
             </p>
             <div className="tn-cta__links">
               <a className="tn-btn tn-btn--oninvert" href={EMAIL}>Email me</a>
