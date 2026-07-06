@@ -26,7 +26,7 @@ import './tenable.css';
 
 const EMAIL =
   'mailto:1barmoshe1@gmail.com?subject=Full%20Stack%20Engineer%2C%20Integrations%20Frameworks%20application%20from%20Bar%20Moshe';
-const CV = '/Bar_Moshe_Resume.pdf';
+const CV = '/Bar_Moshe_CV_Tenable.pdf';
 
 type Proof = {
   tag: string;
